@@ -1,0 +1,19 @@
+package threadChat;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.InputStream;
+
+public class InputListener extends Thread{
+	private ObjectInputStream input;
+	private String message;
+	
+	public InputListener(InputStream stream) throws IOException {
+		input = new ObjectInputStream(stream);
+		start();
+	}
+	
+	public void run() {
+		
+	}
+}

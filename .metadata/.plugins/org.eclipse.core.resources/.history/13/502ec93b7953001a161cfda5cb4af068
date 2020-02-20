@@ -1,0 +1,10 @@
+package thread;
+
+public class MinhaThread extends Thread{
+	
+	private String nome;
+	
+	public MinhaThread(String nome) {
+		this.nome = nome;
+	}
+}

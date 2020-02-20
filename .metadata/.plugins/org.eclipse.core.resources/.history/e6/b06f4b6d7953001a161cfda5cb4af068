@@ -1,0 +1,14 @@
+package thread;
+
+public class MinhaThread extends Thread{
+	
+	private String nome;
+	
+	public MinhaThread(String nome) {
+		this.nome = nome;
+	}
+	
+	public void run() {
+		System.out.println("Executando thread");
+	}
+}

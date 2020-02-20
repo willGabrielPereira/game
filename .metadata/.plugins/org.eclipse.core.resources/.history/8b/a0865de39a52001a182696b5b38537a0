@@ -1,0 +1,13 @@
+package socket;
+
+import java.net.ServerSocket;
+
+public class Server {
+	public void coneccao() {
+		try {
+		ServerSocket server = new ServerSocket();
+		catch() {
+			
+		}
+	}
+}

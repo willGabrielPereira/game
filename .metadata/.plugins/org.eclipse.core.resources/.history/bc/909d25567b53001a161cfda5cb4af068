@@ -1,0 +1,11 @@
+package threadChat;
+
+import java.io.ObjectOutputStream;
+
+public class InputListener extends Thread{
+	private ObjectOutputStream output;
+	
+	public InputListener(OutputStream stream) {
+		output = new ObjectOutputStream(stream);
+	}
+}

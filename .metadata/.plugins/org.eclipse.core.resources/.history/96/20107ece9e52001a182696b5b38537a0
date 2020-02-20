@@ -1,0 +1,19 @@
+package socket;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Server {
+	private ServerSocket server;
+	
+	public Socket conect(int porta) throws IOException {
+		server = new ServerSocket(porta);
+		Socket client = server.accept();
+		return client;
+	}
+	
+	public void conection(Socket socket){
+		
+	}
+}

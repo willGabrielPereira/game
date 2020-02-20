@@ -1,0 +1,14 @@
+package socket;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class Server {
+	public void coneccao() {
+		try {
+		ServerSocket server = new ServerSocket();
+		}catch(IOException e) {
+			System.out.println(e);
+		}
+	}
+}

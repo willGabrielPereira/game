@@ -1,0 +1,42 @@
+package socket;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int num = Integer.parseInt(scan.nextLine());
+		
+		switch (num) {
+		case 1:
+			try {
+				Server server = new Server();
+				Socket host = server.conect(6565);
+				server.conection(host);
+				server.fechasocket(host);
+			}catch(IOException e) {
+				System.out.println(e);
+			}
+			break;
+
+		case 2:
+			try {
+				Client client = new Client("localhost", 6565);
+				
+			}
+			break;
+		default:
+			System.out.println("erroooo");
+			break;
+		}
+
+
+	}
+
+
+}

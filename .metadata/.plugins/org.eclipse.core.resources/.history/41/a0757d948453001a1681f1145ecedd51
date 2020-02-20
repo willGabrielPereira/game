@@ -1,0 +1,11 @@
+package threadChat;
+
+import java.net.ServerSocket;
+
+public class ConnectionListener extends Thread{
+	private ServerSocket server;
+	
+	public ConnectionListener(ServerSocket server) {
+		
+	}
+}

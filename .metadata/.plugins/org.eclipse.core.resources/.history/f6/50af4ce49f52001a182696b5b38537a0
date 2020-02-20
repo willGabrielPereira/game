@@ -1,0 +1,27 @@
+package socket;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Server {
+	private ServerSocket server;
+	ObjectInputStream input;
+	ObjectOutputStream output;
+	
+	public Socket conect(int porta) throws IOException {
+		server = new ServerSocket(porta);
+		Socket client = server.accept();
+		return client;
+	}
+	
+	public void conection(Socket socket) throws IOException{
+		output = new ObjectOutputStream(socket.getOutputStream());
+		input = new ObjectInputStream(socket.getInputStream());
+		
+		String msg = input.readUTF();
+		
+	}
+}

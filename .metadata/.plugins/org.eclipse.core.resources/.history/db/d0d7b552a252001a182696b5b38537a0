@@ -1,0 +1,13 @@
+package socket;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class Client {
+	Socket server;
+	
+	public Client(String host, int port) throws UnknownHostException, IOException {
+		this.server = new Socket(host, port);
+	}
+}

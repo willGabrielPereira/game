@@ -1,0 +1,78 @@
+package chat;
+
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+
+		System.out.print("selecione 1 para ser o host ou 2 para ser o cliente: ");
+		int num = Integer.parseInt(scan.nextLine());
+		
+		switch(num) {
+		case 1:
+			Server server;
+			Socket host;
+			try {
+				String ip = InetAddress.getLocalHost().getHostAddress();
+				System.out.println("Your IP: "+ip);
+				
+				server = new Server();
+				host = server.connect(6565);
+				
+				String message;
+				
+				do{
+					message = scan.nextLine();
+					server.send(message);
+				}while(message != "disconnect");
+				
+			}catch(IOException e) {
+				System.out.println("Error: "+e);
+			}finally {
+				System.out.println("System disconnecting");
+				server.disconnect(host);
+			}
+		}
+		
+		switch (num) {
+		case 1:
+			try {
+				String ip = InetAddress.getLocalHost().getHostAddress();
+				System.out.println("Seu IP é: "+ip);
+				Server server = new Server();
+				Socket host = server.conect(6565);
+				server.conection(host);
+				server.fechasocket(host);
+			}catch(IOException e) {
+				System.out.println(e);
+			}
+			break;
+
+		case 2:
+			try {
+				System.out.print("insira o IP do host: ");
+				String ipHost = scan.nextLine();
+				Client client = new Client(ipHost, 6565);
+				client.send("Dae");
+				client.receive();
+				client.fechaSocket();
+			}catch(IOException e) {
+				System.out.println(e);
+			}
+			break;
+		default:
+			System.out.println("erroooo");
+			break;
+		}
+		scan.close();
+
+	}
+
+
+}
