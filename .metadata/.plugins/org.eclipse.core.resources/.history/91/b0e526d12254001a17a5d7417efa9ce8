@@ -22,9 +22,9 @@ public class Main {
 				String ip = InetAddress.getLocalHost().getHostAddress();
 				System.out.println("Your IP: "+ip);
 				
-				server = new Server(6565);
+				server = new Server();
 				System.out.println("Waiting connection...");
-				//host = server.connect(6565);
+				host = server.connect(6565);
 				System.out.println("Client connected...");
 				
 				String message = "";
@@ -36,7 +36,7 @@ public class Main {
 				
 
 				System.out.println("System disconnecting");
-				//server.disconnect(host);
+				server.disconnect(host);
 				
 			}catch(IOException e) {
 				System.out.println("Error: "+e);

@@ -36,7 +36,7 @@ public class Main {
 				
 
 				System.out.println("System disconnecting");
-				//server.disconnect(host);
+				server.disconnect(host);
 				
 			}catch(IOException e) {
 				System.out.println("Error: "+e);
