@@ -24,7 +24,7 @@ public class Server {
 		inputs = new ArrayList<InputListener>();
 		
 		server = new ServerSocket(porta);
-		ConnectionListener conn = ConnectionListener.instance(this);
+		ConnectionListener conn = ConnectionListener.instance(server);
 	}
 	
 	/*public Socket connect(int porta) throws IOException {
@@ -40,8 +40,6 @@ public class Server {
 		try {
 			outputs.add(new ObjectOutputStream(client.getOutputStream()));
 			inputs.add(new InputListener(client.getInputStream()));
-			
-			System.out.println("New client connected...\n");
 		}catch(IOException e) {
 			clients.remove(client);
 			e.printStackTrace();
@@ -49,10 +47,8 @@ public class Server {
 	}
 	
 	public void send(String string) throws IOException{
-		for(ObjectOutputStream output:outputs) {
-			output.writeUTF(string);
-			output.flush();
-		}
+		output.writeUTF(string);
+		output.flush();
 	}
 	
 //	public String receive() throws IOException{
@@ -63,9 +59,5 @@ public class Server {
 		input.close();
 		output.close();
 		socket.close();
-	}
-	
-	public ServerSocket getServer() {
-		return server;
 	}
 }

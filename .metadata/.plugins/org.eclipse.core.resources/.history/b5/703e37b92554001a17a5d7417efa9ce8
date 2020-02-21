@@ -10,7 +10,6 @@ public class ConnectionListener extends Thread{
 	private Server host;
 	
 	private ConnectionListener(Server server) {
-		this.host = server;
 		this.server = server.getServer();
 		start();
 	}
@@ -22,11 +21,10 @@ public class ConnectionListener extends Thread{
 		return conn;
 	}
 	
-	public void run() { 
+	public void run() {
 		try {
 			Socket client = server.accept();
-			System.out.println("Recebi\n\n");
-			host.addClient(client);
+			// chamar addClient da classe Server
 		}catch(IOException e) {
 			e.printStackTrace();
 		}

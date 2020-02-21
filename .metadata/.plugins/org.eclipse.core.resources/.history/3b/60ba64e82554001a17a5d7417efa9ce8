@@ -41,7 +41,7 @@ public class Server {
 			outputs.add(new ObjectOutputStream(client.getOutputStream()));
 			inputs.add(new InputListener(client.getInputStream()));
 			
-			System.out.println("New client connected...\n");
+			System.out.println("New client connected...");
 		}catch(IOException e) {
 			clients.remove(client);
 			e.printStackTrace();
@@ -49,10 +49,8 @@ public class Server {
 	}
 	
 	public void send(String string) throws IOException{
-		for(ObjectOutputStream output:outputs) {
-			output.writeUTF(string);
-			output.flush();
-		}
+		output.writeUTF(string);
+		output.flush();
 	}
 	
 //	public String receive() throws IOException{

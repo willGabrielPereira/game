@@ -22,7 +22,7 @@ public class ConnectionListener extends Thread{
 		return conn;
 	}
 	
-	public void run() { 
+	public void run() {
 		try {
 			Socket client = server.accept();
 			System.out.println("Recebi\n\n");

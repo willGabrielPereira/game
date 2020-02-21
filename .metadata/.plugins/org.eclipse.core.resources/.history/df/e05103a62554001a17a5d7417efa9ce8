@@ -7,11 +7,9 @@ import java.net.Socket;
 public class ConnectionListener extends Thread{
 	private static ConnectionListener conn;
 	private ServerSocket server;
-	private Server host;
 	
-	private ConnectionListener(Server server) {
-		this.host = server;
-		this.server = server.getServer();
+	private ConnectionListener(ServerSocket server) {
+		this.server = server;
 		start();
 	}
 	
@@ -22,11 +20,10 @@ public class ConnectionListener extends Thread{
 		return conn;
 	}
 	
-	public void run() { 
+	public void run() {
 		try {
 			Socket client = server.accept();
-			System.out.println("Recebi\n\n");
-			host.addClient(client);
+			// chamar addClient da classe Server
 		}catch(IOException e) {
 			e.printStackTrace();
 		}

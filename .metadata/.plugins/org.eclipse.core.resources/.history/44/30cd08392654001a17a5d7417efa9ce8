@@ -49,10 +49,8 @@ public class Server {
 	}
 	
 	public void send(String string) throws IOException{
-		for(ObjectOutputStream output:outputs) {
-			output.writeUTF(string);
-			output.flush();
-		}
+		output.writeUTF(string);
+		output.flush();
 	}
 	
 //	public String receive() throws IOException{

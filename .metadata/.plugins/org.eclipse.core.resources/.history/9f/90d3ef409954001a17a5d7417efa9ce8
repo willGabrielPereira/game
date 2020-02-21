@@ -15,7 +15,6 @@ public class InputListener extends Thread{
 	}
 	
 	public void close() {
-		//fechar thread
 	}
 	
 	public void run() {
