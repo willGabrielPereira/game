@@ -1,5 +1,0 @@
-package threadChat;
-
-public class ConnectionListener extends Thread{
-	private 
-}
